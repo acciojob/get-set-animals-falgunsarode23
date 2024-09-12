@@ -39,7 +39,7 @@ class Dog extends Animal {
   }
 }
 
-/ Test case for Cat class
+// Test case for Cat class
 let cat = new Cat("Siamese");
 console.log(cat.species); // Should print "Siamese"
 cat.makeSound(); // Should print "The Siamese makes a sound"
