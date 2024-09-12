@@ -39,9 +39,14 @@ class Dog extends Animal {
   }
 }
 
-// Example usage
-const testCat = new Cat("Bengal");
-testCat.purr(); // This should log "purr" to the console     // Output: purr
+/ Test case for Cat class
+let cat = new Cat("Siamese");
+console.log(cat.species); // Should print "Siamese"
+cat.makeSound(); // Should print "The Siamese makes a sound"
+cat.purr(); // Should print "purr"
 
-const testDog = new Dog("Poodle");
-testDog.bark(); // This should log "woof" to the console
+// Test case for Dog class
+let dog = new Dog("Bulldog");
+console.log(dog.species); // Should print "Bulldog"
+dog.makeSound(); // Should print "The Bulldog makes a sound"
+dog.bark(); // Should print "woof"
