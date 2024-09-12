@@ -1,17 +1,17 @@
 // Define the Animal class
 class Animal {
   constructor(species) {
-    this.species = species;
+    this._species = species;
   }
 
   // Getter for the species
-  getSpecies() {
-    return this.species;
+  get species() {
+    return this._species;
   }
 
   // Method to make a sound
   makeSound() {
-    console.log("This animal makes a sound.");
+    console.log(`The ${this._species} makes a sound`);
   }
 }
 
@@ -25,11 +25,6 @@ class Cat extends Animal {
   purr() {
     console.log("purr");
   }
-
-  // Override makeSound for Cat
-  makeSound() {
-    console.log("Meow");
-  }
 }
 
 // Define the Dog class, which extends Animal
@@ -42,20 +37,13 @@ class Dog extends Animal {
   bark() {
     console.log("woof");
   }
-
-  // Override makeSound for Dog
-  makeSound() {
-    console.log("Bark");
-  }
 }
 
-// Example usage:
-const cat = new Cat("Feline");
-console.log(cat.getSpecies()); // Output: Feline
-cat.makeSound();               // Output: Meow
-cat.purr();                    // Output: purr
+// Example usage
+const myCat = new Cat("Siamese");
+myCat.makeSound(); // Output: The Siamese makes a sound
+myCat.purr();      // Output: purr
 
-const dog = new Dog("Canine");
-console.log(dog.getSpecies()); // Output: Canine
-dog.makeSound();               // Output: Bark
-dog.bark();                    // Output: woof
+const myDog = new Dog("Golden Retriever");
+myDog.makeSound(); // Output: The Golden Retriever makes a sound
+myDog.bark();      // Output: woof
