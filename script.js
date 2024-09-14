@@ -9,9 +9,9 @@ class Animal {
     return this._species;
   }
 
-  // Method to log a sound (you can customize this in subclasses)
+  // Method to log a sound
   makeSound() {
-    console.log("Some generic animal sound");
+    throw new Error("This method must be overridden in subclass");
   }
 }
 
@@ -19,11 +19,6 @@ class Animal {
 class Cat extends Animal {
   constructor() {
     super("Cat"); // Set the species to 'Cat'
-  }
-
-  // Method to log "purr" sound
-  purr() {
-    console.log("purr");
   }
 
   // Override the makeSound method
@@ -38,11 +33,6 @@ class Dog extends Animal {
     super("Dog"); // Set the species to 'Dog'
   }
 
-  // Method to log "woof" sound
-  bark() {
-    console.log("woof");
-  }
-
   // Override the makeSound method
   makeSound() {
     console.log("Bark");
@@ -53,9 +43,7 @@ class Dog extends Animal {
 const myCat = new Cat();
 console.log(myCat.species); // Cat
 myCat.makeSound(); // Meow
-myCat.purr(); // purr
 
 const myDog = new Dog();
 console.log(myDog.species); // Dog
 myDog.makeSound(); // Bark
-myDog.bark(); // woof
